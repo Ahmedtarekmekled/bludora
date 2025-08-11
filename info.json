@@ -1,0 +1,368 @@
+{
+    "website": {
+      "company": "Bludora",
+      "exactDesignReference": "https://www.clayboan.com/",
+      "designSystem": {
+        "colorPalette": {
+          "primary": "#1a365d",
+          "secondary": "#2563eb", 
+          "accent": "#3b82f6",
+          "background": "#0a0a0a",
+          "surface": "#1a1a1a",
+          "text": {
+            "primary": "#ffffff",
+            "secondary": "#a0a0a0",
+            "muted": "#666666"
+          }
+        },
+        "typography": {
+          "primaryFont": "Helvetica Neue, Arial, sans-serif",
+          "weights": {
+            "light": 300,
+            "regular": 400,
+            "medium": 500,
+            "bold": 700
+          },
+          "sizes": {
+            "hero": "clamp(4rem, 8vw, 12rem)",
+            "subtitle": "clamp(1.5rem, 3vw, 2.5rem)",
+            "body": "1rem",
+            "small": "0.875rem"
+          }
+        }
+      },
+      "layout": {
+        "exactStructure": "clay_boan_replica",
+        "containerMaxWidth": "1400px",
+        "padding": "clamp(1rem, 5vw, 3rem)",
+        "sections": {
+          "spacing": "clamp(6rem, 15vw, 12rem)"
+        }
+      },
+      "navigation": {
+        "type": "fixed_top_minimal",
+        "position": "top: 2rem, left: 2rem, right: 2rem",
+        "layout": "flex_space_between",
+        "leftSide": {
+          "logo": {
+            "type": "origami_b_monogram",
+            "size": "2.5rem",
+            "color": "#3b82f6",
+            "animation": "subtle_rotation_on_hover"
+          },
+          "playButton": {
+            "text": "0\nPlay",
+            "position": "next_to_logo",
+            "fontSize": "0.75rem",
+            "color": "#a0a0a0",
+            "hover": "color_change_to_primary"
+          }
+        },
+        "centerNav": {
+          "items": [
+            {
+              "text": "Selected Work",
+              "link": "/work",
+              "exactStyling": "clay_boan_nav_item"
+            },
+            {
+              "text": "About", 
+              "link": "/about",
+              "exactStyling": "clay_boan_nav_item"
+            },
+            {
+              "text": "Services",
+              "link": "/services", 
+              "exactStyling": "clay_boan_nav_item"
+            },
+            {
+              "text": "Let's chat",
+              "link": "/contact",
+              "exactStyling": "clay_boan_nav_item"
+            }
+          ],
+          "typography": {
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "letterSpacing": "0.025em",
+            "textTransform": "none"
+          },
+          "hover": {
+            "effect": "subtle_underline_animation",
+            "color": "#3b82f6"
+          }
+        },
+        "rightSide": {
+          "socialLabel": "(Social)",
+          "socialLinks": [
+            {
+              "label": "GH",
+              "platform": "GitHub",
+              "url": "https://github.com/"
+            },
+            {
+              "label": "TW",
+              "platform": "Twitter", 
+              "url": "https://twitter.com/"
+            },
+            {
+              "label": "IG",
+              "platform": "Instagram",
+              "url": "https://www.instagram.com/bludorasoftware/"
+            }
+          ],
+          "menuToggle": {
+            "text": "Menu",
+            "position": "far_right",
+            "mobileOnly": true
+          }
+        },
+        "animations": {
+          "onScroll": "subtle_background_fade",
+          "hover": "individual_item_highlight"
+        }
+      },
+      "hero": {
+        "exactLayout": "clay_boan_hero_replica",
+        "structure": {
+          "mainTitle": {
+            "text": "Bludora",
+            "fontSize": "clamp(6rem, 12vw, 18rem)",
+            "fontWeight": 300,
+            "lineHeight": 0.85,
+            "color": "#ffffff",
+            "position": "center_left_aligned",
+            "animation": {
+              "type": "fade_in_up_stagger",
+              "delay": "0.2s",
+              "duration": "1.2s",
+              "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+            }
+          },
+          "subtitle": {
+            "text": "(Software Development Studio)",
+            "fontSize": "clamp(1.2rem, 2.5vw, 2rem)",
+            "fontWeight": 300,
+            "color": "#a0a0a0",
+            "position": "below_title_left_aligned",
+            "animation": {
+              "type": "fade_in_up_stagger",
+              "delay": "0.4s",
+              "duration": "1.2s"
+            }
+          }
+        },
+        "background": {
+          "type": "dark_gradient",
+          "colors": ["#0a0a0a", "#1a1a1a"],
+          "particles": {
+            "enabled": true,
+            "type": "floating_geometric_shapes",
+            "color": "#2563eb",
+            "opacity": 0.1,
+            "animation": "slow_drift"
+          }
+        }
+      },
+      "sections": [
+        {
+          "id": "work",
+          "exactLayout": "clay_boan_work_section",
+          "title": {
+            "main": "(1)",
+            "subtitle": "(Featured Work)",
+            "styling": {
+              "mainNumber": {
+                "fontSize": "clamp(2rem, 4vw, 3rem)",
+                "color": "#666666",
+                "fontWeight": 300
+              },
+              "subtitle": {
+                "fontSize": "clamp(1.5rem, 3vw, 2.5rem)",
+                "color": "#ffffff",
+                "fontWeight": 300,
+                "marginLeft": "2rem"
+              }
+            }
+          },
+          "projects": {
+            "layout": "clay_boan_project_grid",
+            "displayStyle": "large_company_names",
+            "items": [
+              {
+                "name": "DentalVisuals",
+                "subtitle": "Healthcare Technology Platform",
+                "fontSize": "clamp(3rem, 6vw, 8rem)",
+                "fontWeight": 300,
+                "color": "#ffffff",
+                "hover": {
+                  "effect": "subtle_glow",
+                  "color": "#3b82f6"
+                },
+                "link": "https://dental-visuals.vercel.app/",
+                "description": "Advanced dental visualization combining medical expertise with 3D animation technology"
+              },
+              {
+                "name": "FinTech Analytics",
+                "subtitle": "Financial Dashboard Platform", 
+                "fontSize": "clamp(3rem, 6vw, 8rem)",
+                "fontWeight": 300,
+                "color": "#ffffff",
+                "status": "coming_soon"
+              },
+              {
+                "name": "AI Content Studio",
+                "subtitle": "Machine Learning Platform",
+                "fontSize": "clamp(3rem, 6vw, 8rem)", 
+                "fontWeight": 300,
+                "color": "#ffffff",
+                "status": "in_development"
+              },
+              {
+                "name": "WebGL Visualizations",
+                "subtitle": "3D Interactive Experiences",
+                "fontSize": "clamp(3rem, 6vw, 8rem)",
+                "fontWeight": 300, 
+                "color": "#ffffff",
+                "status": "portfolio"
+              }
+            ],
+            "cta": {
+              "text": "See selected work",
+              "position": "bottom_of_section",
+              "styling": {
+                "fontSize": "1rem",
+                "color": "#a0a0a0",
+                "textDecoration": "underline",
+                "hover": "color_change_to_primary"
+              }
+            }
+          },
+          "animations": {
+            "onScrollIntoView": "stagger_fade_in_up",
+            "projectHover": "subtle_scale_and_glow"
+          }
+        },
+        {
+          "id": "about",
+          "exactLayout": "clay_boan_about_section",
+          "title": {
+            "main": "(2)",
+            "subtitle": "(About)",
+            "styling": "identical_to_section_1"
+          },
+          "content": {
+            "leftSide": {
+              "rotatingText": {
+                "greetings": [
+                  "Hello World",
+                  "console.log('Hi')",
+                  "print('Hello')",
+                  "#!/bin/bash", 
+                  "<h1>Welcome</h1>",
+                  "SELECT * FROM users",
+                  "import hello",
+                  "function init()",
+                  "Hello World"
+                ],
+                "fontSize": "clamp(2rem, 4vw, 3.5rem)",
+                "fontWeight": 300,
+                "color": "#ffffff",
+                "animation": {
+                  "type": "infinite_rotation",
+                  "duration": "8s",
+                  "easing": "linear"
+                },
+                "layout": "scrolling_marquee_style"
+              }
+            },
+            "rightSide": {
+              "logo": {
+                "type": "large_origami_b_display", 
+                "size": "clamp(8rem, 15vw, 20rem)",
+                "color": "#2563eb",
+                "position": "center_right",
+                "animation": "subtle_rotation_continuous"
+              },
+              "playButton": {
+                "text": "Play\nShowreel",
+                "position": "bottom_right_of_logo",
+                "styling": "minimal_text_button",
+                "functionality": "modal_video_player"
+              }
+            }
+          }
+        }
+      ],
+      "animations": {
+        "globalSettings": {
+          "reducedMotion": "respect_user_preferences",
+          "performanceOptimized": true
+        },
+        "scrollAnimations": {
+          "library": "GSAP_ScrollTrigger",
+          "effects": [
+            {
+              "trigger": "hero",
+              "animation": "fade_in_up_stagger",
+              "start": "top 80%"
+            },
+            {
+              "trigger": "sections",
+              "animation": "slide_in_from_bottom",
+              "start": "top 70%"
+            }
+          ]
+        },
+        "hoverEffects": {
+          "navigationItems": "underline_expand",
+          "projectNames": "glow_and_subtle_scale",
+          "buttons": "background_color_transition",
+          "logo": "rotation_on_hover"
+        },
+        "pageTransitions": {
+          "type": "smooth_fade",
+          "duration": "0.6s"
+        }
+      },
+      "responsive": {
+        "exactBreakpoints": "clay_boan_responsive_system",
+        "mobile": {
+          "navigation": "hamburger_overlay_menu",
+          "hero": "single_column_centered",
+          "projects": "stacked_vertical_layout",
+          "typography": "mobile_optimized_scaling"
+        }
+      },
+      "performance": {
+        "animations": "GPU_accelerated",
+        "lazyLoading": "intersection_observer",
+        "codeOptimization": "tree_shaking_enabled"
+      },
+      "exactStyleSpecs": {
+        "containerPadding": "clamp(2rem, 5vw, 8rem)",
+        "sectionSpacing": "clamp(8rem, 15vw, 15rem)",
+        "lineHeight": {
+          "headings": 0.9,
+          "body": 1.6
+        },
+        "borderRadius": "0px",
+        "transitions": {
+          "default": "all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)",
+          "hover": "all 0.2s ease-out"
+        }
+      },
+      "interactiveElements": {
+        "cursor": {
+          "type": "custom_following_cursor",
+          "style": "minimal_dot_with_hover_scaling"
+        },
+        "backgroundParticles": {
+          "type": "floating_code_elements",
+          "density": "low",
+          "colors": ["#2563eb", "#3b82f6"],
+          "opacity": 0.05
+        }
+      }
+    }
+  }
