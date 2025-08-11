@@ -152,4 +152,4 @@ This project is proprietary and confidential. All rights reserved.
 
 ---
 
-Built with ❤️ by Bludora Team
+Built with ❤️ by Ahmed Mekled
