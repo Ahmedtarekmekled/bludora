@@ -28,12 +28,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Animated Badge */}
-        <div className="mt-8 sm:mt-16 inline-flex items-center space-x-2 bg-surface/90 backdrop-blur-sm border border-accent-400/30 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 animate-fade-in">
-          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-400 rounded-full animate-pulse"></span>
-          <span className="text-xs sm:text-sm font-mono text-accent-400 uppercase tracking-wider">
-            Digital Innovation Studio
-          </span>
-        </div>
+        <div className="sm:mt-16   px-4 sm:px-6 py-2 sm:py-3 sm:mb-8 animate-fade-in"></div>
 
         {/* Main Title */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-4 sm:mb-6 leading-none tracking-tight">
@@ -49,7 +44,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display font-light text-text-secondary mb-6 sm:mb-8 max-w-5xl mx-auto leading-relaxed animate-fade-in-up px-4">
+        <p className="flex flex-col items-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-display font-light text-text-secondary mb-6 sm:mb-8 max-w-5xl mx-auto leading-relaxed animate-fade-in-up px-4">
           We craft{" "}
           <RotatingText
             texts={[
@@ -60,7 +55,7 @@ export default function Hero() {
               "amazing websites",
               "powerful applications",
             ]}
-            mainClassName="text-accent-400 font-medium"
+            mainClassName="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-display font-bold text-accent-400 inline-block"
             staggerFrom="last"
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -104,7 +99,7 @@ export default function Hero() {
         <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-sm sm:max-w-md mx-auto animate-fade-in-up-delay-3 px-4">
           <div className="text-center">
             <div className="text-xl sm:text-2xl font-display font-bold text-accent-400">
-              50+
+              30+
             </div>
             <div className="text-xs sm:text-sm text-text-muted">Projects</div>
           </div>
@@ -124,8 +119,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
     </section>
   );
 }
