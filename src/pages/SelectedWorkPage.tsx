@@ -129,11 +129,11 @@ export default function SelectedWorkPage() {
       </section>
 
       {/* Curved Loop */}
-      <section className="relative overflow-hidden bg-surface-dark">
+      <section className="relative md:block bg-surface-dark">
         <CurvedLoop
-          marqueeText="✦ PORTFOLIO ✦ INNOVATION ✦ EXCELLENCE ✦ CREATIVITY ✦"
+          marqueeText="✦ PORTFOLIO ✦ INNOVATION ✦ EXCELLENCE ✦ CREATIVITY ✦ BLUDORA ✦ SOFTWARE ✦ DEVELOPMENT ✦ STUDIO ✦ INNOVATION ✦"
           speed={2}
-          curveAmount={300}
+          curveAmount={100}
           direction="left"
           interactive={true}
           className="font-display font-bold text-white"

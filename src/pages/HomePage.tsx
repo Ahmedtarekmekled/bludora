@@ -15,7 +15,7 @@ export default function HomePage() {
           <CurvedLoop
             marqueeText="✦ BLUDORA ✦ SOFTWARE ✦ DEVELOPMENT ✦ STUDIO ✦ INNOVATION ✦"
             speed={2}
-            curveAmount={300}
+            curveAmount={100}
             direction="right"
             interactive={true}
             className="font-display font-bold text-accent-400"

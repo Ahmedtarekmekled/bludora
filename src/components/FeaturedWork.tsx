@@ -36,7 +36,7 @@ export default function FeaturedWork() {
       ],
       link: "https://prestige-fly-yxnm.vercel.app/",
       status: "Live",
-      year: "2024",
+      year: "2025",
       image: "✈️",
       metrics: [
         { label: "Bilingual Support", value: "EN/FR", icon: "🌍" },

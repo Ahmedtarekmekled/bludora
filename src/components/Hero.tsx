@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import RotatingText from "./RotatingText";
 
 export default function Hero() {
   return (
@@ -50,9 +51,25 @@ export default function Hero() {
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-display font-light text-text-secondary mb-6 sm:mb-8 max-w-5xl mx-auto leading-relaxed animate-fade-in-up px-4">
           We craft{" "}
-          <span className="text-accent-400 font-medium">
-            digital experiences
-          </span>{" "}
+          <RotatingText
+            texts={[
+              "digital experiences",
+              "innovative solutions",
+              "creative platforms",
+              "future technology",
+              "amazing websites",
+              "powerful applications",
+            ]}
+            mainClassName="text-accent-400 font-medium"
+            staggerFrom="last"
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-120%", opacity: 0 }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={3000}
+          />{" "}
           that push the boundaries of technology and creativity.
         </p>
 
@@ -109,15 +126,6 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center relative overflow-hidden">
-            <div className="w-1 h-2 sm:h-3 bg-accent-400 rounded-full mt-1.5 sm:mt-2 animate-pulse"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-400/10 to-transparent animate-pulse"></div>
-          </div>
-          <span className="text-xs text-white/60 font-mono">SCROLL</span>
-        </div>
-      </div>
     </section>
   );
 }
