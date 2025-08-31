@@ -99,7 +99,7 @@ export default function ServicesPage() {
         <CurvedLoop
           marqueeText="✦ DESIGN ✦ DEVELOP ✦ DEPLOY ✦ DELIVER ✦"
           speed={2.5}
-          curveAmount={350}
+          curveAmount={100}
           direction="right"
           interactive={true}
           className="font-display font-bold text-accent-400"

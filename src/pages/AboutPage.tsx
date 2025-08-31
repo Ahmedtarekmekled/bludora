@@ -30,7 +30,7 @@ export default function AboutPage() {
         <CurvedLoop
           marqueeText="✦ PASSION ✦ INNOVATION ✦ EXCELLENCE ✦ CREATIVITY ✦"
           speed={1.5}
-          curveAmount={400}
+          curveAmount={100}
           direction="left"
           interactive={true}
           className="font-display font-bold text-white"
