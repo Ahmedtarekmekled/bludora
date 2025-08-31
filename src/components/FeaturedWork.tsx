@@ -21,6 +21,30 @@ interface Project {
 export default function FeaturedWork() {
   const projects: Project[] = [
     {
+      name: "Prestige Fly",
+      subtitle: "International Travel & Education Services",
+      description:
+        "A modern, responsive Next.js 14 website offering comprehensive international travel and education services with bilingual support, interactive elements, and performance optimization.",
+      category: "Travel & Education",
+      technologies: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Three.js",
+        "Framer Motion",
+      ],
+      link: "https://prestige-fly-yxnm.vercel.app/",
+      status: "Live",
+      year: "2024",
+      image: "✈️",
+      metrics: [
+        { label: "Bilingual Support", value: "EN/FR", icon: "🌍" },
+        { label: "Performance", value: "Fast", icon: "⚡" },
+        { label: "Responsive Design", value: "100%", icon: "📱" },
+      ],
+    },
+    {
       name: "DentalVisuals",
       subtitle: "Healthcare Technology Platform",
       description:
@@ -29,7 +53,7 @@ export default function FeaturedWork() {
       technologies: ["React", "Three.js", "WebGL", "Node.js", "MongoDB"],
       link: "https://dental-visuals.vercel.app/",
       status: "Live",
-      year: "2024",
+      year: "2025",
       image: "🦷",
       metrics: [
         { label: "Patient Understanding", value: "+40%", icon: "📈" },
@@ -51,22 +75,6 @@ export default function FeaturedWork() {
         { label: "Content Approval", value: "90%", icon: "✅" },
         { label: "Speed Increase", value: "5x", icon: "🚀" },
         { label: "Industries Served", value: "10+", icon: "🏢" },
-      ],
-    },
-    {
-      name: "FinanceFlow",
-      subtitle: "Financial Dashboard Suite",
-      description:
-        "Comprehensive financial analytics platform with real-time data visualization, predictive modeling, and advanced reporting capabilities for institutional investors.",
-      category: "FinTech",
-      technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
-      status: "Coming Soon",
-      year: "2024",
-      image: "📊",
-      metrics: [
-        { label: "Data Processing", value: "1M+ txn/s", icon: "⚡" },
-        { label: "Response Time", value: "<1s", icon: "⏰" },
-        { label: "Accuracy", value: "99.9%", icon: "🎯" },
       ],
     },
   ];

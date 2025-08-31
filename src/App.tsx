@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import PageTransition from "./components/PageTransition";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
@@ -118,6 +119,9 @@ function App() {
 
         {/* Navigation */}
         <Navigation />
+
+        {/* Scroll to top on route change */}
+        <ScrollToTop />
 
         {/* Main Content with Page Transitions */}
         <PageTransition>

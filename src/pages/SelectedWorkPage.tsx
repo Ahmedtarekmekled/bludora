@@ -5,6 +5,33 @@ import CurvedLoop from "../components/CurvedLoop";
 export default function SelectedWorkPage() {
   const projects = [
     {
+      title: "Prestige Fly",
+      category: "International Travel & Education Services",
+      description:
+        "A modern, responsive Next.js 14 website offering comprehensive international travel and education services with bilingual support, interactive elements, and performance optimization.",
+      image: "✈️",
+      technologies: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Three.js",
+        "Framer Motion",
+      ],
+      link: "https://prestige-fly-yxnm.vercel.app/",
+      year: "2025",
+      challenge:
+        "Creating a modern, bilingual website that seamlessly handles international travel services, study abroad programs, and premium tourism with interactive elements and optimal performance.",
+      solution:
+        "Built a Next.js 14 application with TypeScript, featuring bilingual support, interactive world maps, multi-step booking forms, and performance optimizations including static site generation.",
+      results: [
+        "Full bilingual support (EN/FR)",
+        "Interactive world map for destinations",
+        "Multi-step consultation booking form",
+        "Optimized performance with fast loading times",
+      ],
+    },
+    {
       title: "DentalVisuals",
       category: "Healthcare Technology",
       description:
