@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Phone, Mail, MessageCircle, Send, Clock } from "lucide-react";
 import ModelViewer from "../components/ModelViewer";
 import CircularText from "../components/CircularText";
+import SEO from "../components/SEO";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -42,6 +43,21 @@ export default function ContactPage() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Contact Bludora - Get In Touch for Your Next Project"
+        description="Ready to bring your digital vision to life? Contact Bludora via WhatsApp, email, or phone. We offer 24/7 support and work with clients worldwide. Let's start your next breakthrough project."
+        url="https://bludora.vercel.app/contact"
+        image="/logo1.png"
+        keywords={[
+          "contact",
+          "whatsapp",
+          "email",
+          "phone",
+          "project consultation",
+          "software development",
+          "get in touch",
+        ]}
+      />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-surface to-background-light relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

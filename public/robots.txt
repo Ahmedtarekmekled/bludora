@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
 
 # Sitemap
-Sitemap: https://bludoraa.vercel.app/sitemap.xml
+Sitemap: https://bludora.vercel.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

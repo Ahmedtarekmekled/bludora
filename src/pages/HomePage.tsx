@@ -3,10 +3,17 @@ import FeaturedWork from "../components/FeaturedWork";
 import About from "../components/About";
 import CircularText from "../components/CircularText";
 import CurvedLoop from "../components/CurvedLoop";
+import SEO from "../components/SEO";
 
 export default function HomePage() {
   return (
     <main>
+      <SEO
+        title="Bludora - Software Development Studio"
+        description="Creating cutting-edge digital experiences with innovative software solutions. A software development studio crafting digital experiences that push the boundaries of technology and creativity."
+        url="https://bludora.vercel.app"
+        image="/logo1.png"
+      />
       <Hero />
 
       {/* Curved Loop Section */}

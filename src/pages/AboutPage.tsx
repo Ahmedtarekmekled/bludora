@@ -1,9 +1,16 @@
 import CircularText from "../components/CircularText";
 import CurvedLoop from "../components/CurvedLoop";
+import SEO from "../components/SEO";
 
 export default function AboutPage() {
   return (
     <main className="pt-32">
+      <SEO
+        title="About Bludora - Our Story & Vision"
+        description="Learn about Bludora's journey as digital architects crafting tomorrow's technology today with passion, precision, and innovation."
+        url="https://bludora.vercel.app/about"
+        image="/logo1.png"
+      />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-surface to-background-light relative overflow-hidden">
         <div className="container mx-auto px-container text-center">

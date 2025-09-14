@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CircularText from "../components/CircularText";
 import CurvedLoop from "../components/CurvedLoop";
+import SEO from "../components/SEO";
 
 export default function SelectedWorkPage() {
   const projects = [
@@ -114,6 +115,23 @@ export default function SelectedWorkPage() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Selected Work - Bludora Portfolio & Case Studies"
+        description="Explore our portfolio of cutting-edge digital experiences including Prestige Fly, DentalVisuals, FinTech Analytics, AI Content Studio, and WebGL visualizations. See how we push boundaries and deliver exceptional results."
+        url="https://bludora.vercel.app/work"
+        image="/logo1.png"
+        keywords={[
+          "portfolio",
+          "case studies",
+          "web development",
+          "mobile apps",
+          "ai ml",
+          "webgl",
+          "react",
+          "typescript",
+          "projects",
+        ]}
+      />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-surface to-background-light relative overflow-hidden">
         <div className="container mx-auto px-container text-center">

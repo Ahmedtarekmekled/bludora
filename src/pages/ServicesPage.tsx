@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CircularText from "../components/CircularText";
 import CurvedLoop from "../components/CurvedLoop";
+import SEO from "../components/SEO";
 
 export default function ServicesPage() {
   const services = [
@@ -80,6 +81,21 @@ export default function ServicesPage() {
 
   return (
     <main className="pt-32">
+      <SEO
+        title="Our Services - Web Development, Mobile Apps & More"
+        description="From concept to deployment, we deliver end-to-end digital solutions including web development, mobile apps, UI/UX design, backend development, AI/ML, and DevOps."
+        url="https://bludora.vercel.app/services"
+        image="/logo1.png"
+        keywords={[
+          "web development",
+          "mobile development",
+          "ui ux design",
+          "backend development",
+          "ai machine learning",
+          "devops",
+          "software services",
+        ]}
+      />
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-surface to-background-light relative overflow-hidden">
         <div className="container mx-auto px-container text-center">
