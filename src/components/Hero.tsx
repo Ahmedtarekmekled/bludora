@@ -64,7 +64,7 @@ export default function Hero() {
               "amazing websites",
               "powerful applications",
             ]}
-            mainClassName="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent inline-block px-2"
+            mainClassName="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display font-bold text-accent-400 inline-block px-2"
             staggerFrom="last"
             initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
