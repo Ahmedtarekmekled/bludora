@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-0">
         
         {/* Premium Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-fade-in-up shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+        <div className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-fade-in-up shadow-[0_0_20px_rgba(255,255,255,0.05)]">
           <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
           <span className="text-xs sm:text-sm font-medium text-white/80 tracking-widest uppercase">Welcome to the future of digital</span>
         </div>
