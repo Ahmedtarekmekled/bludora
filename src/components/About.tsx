@@ -204,17 +204,18 @@ export default function About() {
           <div className="flex flex-col items-center space-y-8">
             {/* Large Logo */}
             <div className="relative group">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 p-8 bg-gradient-to-br from-surface-dark via-surface to-surface-light rounded-3xl border border-border group-hover:border-accent-400/50 transition-all duration-500 flex items-center justify-center">
+              <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 p-8 bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 group-hover:border-accent-400/50 transition-all duration-500 flex items-center justify-center shadow-[0_0_40px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.3)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 via-transparent to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.5rem]"></div>
                 <img
                   src="/logo1.png"
                   alt="Bludora Logo"
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                  className="relative z-10 w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
 
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-12 h-2 bg-secondary-500 rounded-full opacity-30 animate-bounce"></div>
+              {/* Glowing Orbs */}
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent-500/30 rounded-full blur-[40px] animate-pulse"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-500/20 rounded-full blur-[50px] animate-pulse" style={{ animationDelay: "1s" }}></div>
             </div>
 
             {/* Play Button */}
@@ -248,16 +249,16 @@ export default function About() {
             return (
               <div
                 key={index}
-                className="text-center p-6 bg-surface-dark rounded-2xl border border-border hover:border-accent-400/50 transition-all duration-300 group"
+                className="text-center p-6 bg-white/5 backdrop-blur-lg rounded-[2rem] border border-white/10 hover:border-accent-400/50 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
               >
                 <IconComponent
                   size={32}
-                  className="text-accent-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                  className="text-accent-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:text-accent-300"
                 />
                 <div className="text-3xl font-display font-bold text-white mb-2">
                   {stat.value}
                 </div>
-                <div className="text-text-muted text-sm">{stat.label}</div>
+                <div className="text-white/60 text-sm tracking-wider uppercase">{stat.label}</div>
               </div>
             );
           })}

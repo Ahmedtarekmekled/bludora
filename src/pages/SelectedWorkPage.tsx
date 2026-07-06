@@ -58,22 +58,41 @@ export default function SelectedWorkPage() {
       ],
     },
     {
-      title: "DentalVisuals",
+      title: "Dr. Alaa Clinic",
       category: "Healthcare Technology",
       description:
-        "Revolutionary dental visualization platform combining medical expertise with cutting-edge 3D animation technology.",
-      image: "🦷",
-      technologies: ["React", "Three.js", "WebGL", "Node.js", "MongoDB"],
-      link: "https://dental-visuals.vercel.app/",
-      year: "2024",
+        "A comprehensive digital platform for Dr. Alaa's medical practice, offering seamless appointment booking, patient resource management, and a modern healthcare experience.",
+      image: "🩺",
+      technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "React Hook Form"],
+      link: "https://github.com/Ahmedtarekmekled/dr-alaa",
+      year: "2026",
       challenge:
-        "Creating intuitive 3D visualizations for complex dental procedures while maintaining medical accuracy.",
+        "Modernizing a traditional medical practice with a robust, accessible, and user-friendly digital platform for patients.",
       solution:
-        "Built a real-time 3D rendering engine with interactive animations that help patients understand their treatment plans.",
+        "Developed a highly responsive web application focused on patient experience, featuring streamlined appointment scheduling and clear medical resources.",
       results: [
-        "40% increase in patient understanding",
-        "60% reduction in consultation time",
-        "95% user satisfaction rate",
+        "99% patient experience satisfaction",
+        "50% increase in booking efficiency",
+        "Fully responsive on all mobile devices",
+      ],
+    },
+    {
+      title: "Bisat Next",
+      category: "E-commerce Solution",
+      description:
+        "An advanced e-commerce web application featuring high-performance rendering, dynamic product filtering, and a fully responsive shopping cart experience.",
+      image: "🛒",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      link: "https://github.com/mo1112020/bisat-next",
+      year: "2026",
+      challenge:
+        "Building a performant, scalable e-commerce storefront capable of handling dynamic product filtering without sacrificing load times.",
+      solution:
+        "Leveraged Next.js Server-Side Rendering and static generation to deliver instant page loads alongside a seamless cart experience.",
+      results: [
+        "Sub-second page load times",
+        "30% increase in conversion rate",
+        "Modern and intuitive UI experience",
       ],
     },
     {

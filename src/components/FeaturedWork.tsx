@@ -68,20 +68,37 @@ export default function FeaturedWork() {
       ],
     },
     {
-      name: "DentalVisuals",
-      subtitle: "Healthcare Technology Platform",
+      name: "Dr. Alaa Clinic",
+      subtitle: "Medical Practice Platform",
       description:
-        "Revolutionary dental visualization platform combining medical expertise with cutting-edge 3D animation technology for enhanced patient communication and treatment planning.",
+        "A comprehensive digital platform for Dr. Alaa's medical practice, offering seamless appointment booking, patient resource management, and a modern healthcare experience.",
       category: "Healthcare Tech",
-      technologies: ["React", "Three.js", "WebGL", "Node.js", "MongoDB"],
-      link: "https://dental-visuals.vercel.app/",
+      technologies: ["Next.js 14", "TypeScript", "Tailwind CSS", "React Hook Form"],
+      link: "https://dr-alaa.vercel.app/",
       status: "Live",
-      year: "2025",
-      image: "🦷",
+      year: "2026",
+      image: "🩺",
       metrics: [
-        { label: "Patient Understanding", value: "+40%", icon: "📈" },
-        { label: "Consultation Time", value: "-60%", icon: "⏱️" },
-        { label: "User Satisfaction", value: "95%", icon: "⭐" },
+        { label: "Patient Experience", value: "99%", icon: "⭐" },
+        { label: "Booking Efficiency", value: "+50%", icon: "📈" },
+        { label: "Mobile Responsive", value: "100%", icon: "📱" },
+      ],
+    },
+    {
+      name: "Bisat Next",
+      subtitle: "Modern E-commerce Solution",
+      description:
+        "An advanced e-commerce web application featuring high-performance rendering, dynamic product filtering, and a fully responsive shopping cart experience.",
+      category: "E-commerce",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      link: "https://bisatim.com/",
+      status: "Live",
+      year: "2026",
+      image: "🛒",
+      metrics: [
+        { label: "Page Load Speed", value: "<1s", icon: "⚡" },
+        { label: "Conversion Rate", value: "+30%", icon: "📈" },
+        { label: "UI Experience", value: "Modern", icon: "✨" },
       ],
     },
     {
@@ -127,10 +144,10 @@ export default function FeaturedWork() {
         {/* Section Header */}
         <div className="text-center mb-16 sm:mb-20 lg:mb-32">
           <div className="flex flex-col sm:flex-row sm:items-center justify-center gap-4 mb-8">
-            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-text-muted">
+            <span className="text-2xl sm:text-3xl lg:text-4xl font-light text-accent-400/50">
               (1)
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold text-white">
+            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold bg-gradient-to-r from-white via-white to-white/50 bg-clip-text text-transparent">
               Featured Work
             </h2>
           </div>
@@ -145,10 +162,10 @@ export default function FeaturedWork() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-surface-dark/50 backdrop-blur-sm rounded-3xl border border-border hover:border-accent-400/30 transition-all duration-500 overflow-hidden"
+              className="group relative bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 hover:border-accent-400/50 transition-all duration-500 overflow-hidden shadow-none hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
             >
               {/* Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-500/5 via-transparent to-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 via-transparent to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative p-6 sm:p-8 lg:p-12">
                 <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -273,27 +290,30 @@ export default function FeaturedWork() {
 
         {/* CTA Section */}
         <div className="mt-20 lg:mt-32 text-center">
-          <div className="bg-gradient-to-r from-accent-400/10 via-secondary-500/10 to-accent-400/10 rounded-3xl p-8 lg:p-12 border border-accent-400/20">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white mb-6">
-              Ready to Start Your Project?
-            </h3>
-            <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can bring your vision to life with the same
-              dedication and expertise.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="px-8 py-4 bg-accent-400 hover:bg-accent-500 text-white font-display font-bold rounded-full transition-all duration-300 transform hover:scale-105 inline-block text-center"
-              >
-                Start a Project
-              </Link>
-              <Link
-                to="/work"
-                className="px-8 py-4 border-2 border-accent-400 text-accent-400 hover:bg-accent-400 hover:text-white font-display font-bold rounded-full transition-all duration-300 inline-block text-center"
-              >
-                View All Work
-              </Link>
+          <div className="relative bg-white/5 backdrop-blur-xl rounded-[3rem] p-10 lg:p-16 border border-white/10 overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.1)]">
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-400/20 via-secondary-500/10 to-accent-400/20 opacity-50"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                Ready to Start Your Project?
+              </h3>
+              <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto font-light">
+                Let's discuss how we can bring your vision to life with the same
+                dedication and expertise.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  to="/contact"
+                  className="group relative px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-accent-400/50 text-white font-display font-medium rounded-full overflow-hidden transition-all duration-500 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] inline-block text-center"
+                >
+                  <span className="relative z-10">Start a Project</span>
+                </Link>
+                <Link
+                  to="/work"
+                  className="px-8 py-4 text-white/70 hover:text-white font-display font-medium rounded-full transition-all duration-300 inline-block text-center border-b border-transparent hover:border-white/50 pb-1"
+                >
+                  View All Work
+                </Link>
+              </div>
             </div>
           </div>
         </div>
