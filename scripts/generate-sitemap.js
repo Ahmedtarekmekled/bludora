@@ -1,47 +1,47 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Website configuration
-const siteUrl = 'https://bludora.vercel.app';
+const siteUrl = "https://bludora.vercel.app";
 const pages = [
   {
-    url: '/',
-    priority: '1.0',
-    changefreq: 'daily',
+    url: "/",
+    priority: "1.0",
+    changefreq: "daily",
     lastmod: new Date().toISOString(),
   },
   {
-    url: '/about',
-    priority: '0.9',
-    changefreq: 'monthly',
+    url: "/about",
+    priority: "0.9",
+    changefreq: "monthly",
     lastmod: new Date().toISOString(),
   },
   {
-    url: '/services',
-    priority: '0.9',
-    changefreq: 'weekly',
+    url: "/services",
+    priority: "0.9",
+    changefreq: "weekly",
     lastmod: new Date().toISOString(),
   },
   {
-    url: '/work',
-    priority: '0.8',
-    changefreq: 'weekly',
+    url: "/work",
+    priority: "0.8",
+    changefreq: "weekly",
     lastmod: new Date().toISOString(),
   },
   {
-    url: '/selected-work',
-    priority: '0.8',
-    changefreq: 'weekly',
+    url: "/selected-work",
+    priority: "0.8",
+    changefreq: "weekly",
     lastmod: new Date().toISOString(),
   },
   {
-    url: '/contact',
-    priority: '0.8',
-    changefreq: 'monthly',
+    url: "/contact",
+    priority: "0.8",
+    changefreq: "monthly",
     lastmod: new Date().toISOString(),
   },
 ];
@@ -59,7 +59,7 @@ ${pages
     <priority>${page.priority}</priority>
   </url>`
   )
-  .join('\n')}
+  .join("\n")}
 </urlset>`;
 
   return sitemap;
@@ -82,29 +82,29 @@ Crawl-delay: 1`;
 }
 
 // Ensure dist directory exists
-const distDir = path.join(__dirname, '..', 'dist');
+const distDir = path.join(__dirname, "..", "dist");
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
 
 // Generate and write sitemap
 const sitemap = generateSitemap();
-fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
+fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemap);
 
 // Generate and write robots.txt
 const robotsTxt = generateRobotsTxt();
-fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt);
+fs.writeFileSync(path.join(distDir, "robots.txt"), robotsTxt);
 
-console.log('✅ Sitemap generated successfully!');
-console.log('📄 sitemap.xml created in dist/');
-console.log('🤖 robots.txt created in dist/');
+console.log("✅ Sitemap generated successfully!");
+console.log("📄 sitemap.xml created in dist/");
+console.log("🤖 robots.txt created in dist/");
 console.log(`🌐 Site URL: ${siteUrl}`);
 console.log(`📊 Total pages: ${pages.length}`);
 
 // Also copy to public directory for development
-const publicDir = path.join(__dirname, '..', 'public');
+const publicDir = path.join(__dirname, "..", "public");
 if (fs.existsSync(publicDir)) {
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt);
-  console.log('📁 Files also copied to public/ directory');
+  fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemap);
+  fs.writeFileSync(path.join(publicDir, "robots.txt"), robotsTxt);
+  console.log("📁 Files also copied to public/ directory");
 }

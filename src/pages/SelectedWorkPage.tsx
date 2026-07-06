@@ -6,6 +6,31 @@ import SEO from "../components/SEO";
 export default function SelectedWorkPage() {
   const projects = [
     {
+      title: "The Royal Perfumes",
+      category: "Luxury E-commerce Platform",
+      description:
+        "A premium e-commerce platform for luxury perfumes, featuring a sleek design, responsive layout, and seamless shopping experience.",
+      image: "✨",
+      technologies: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "Framer Motion",
+      ],
+      link: "https://www.royalperfumes.company/",
+      year: "2026",
+      challenge:
+        "Creating a premium, highly responsive e-commerce platform for luxury perfumes that seamlessly integrates secure payments and order management.",
+      solution:
+        "Built a robust Next.js application with Supabase for backend services, providing a seamless and highly performant shopping experience.",
+      results: [
+        "Modern, sleek UI design",
+        "Seamless e-commerce integration",
+        "Fast performance and fully responsive",
+      ],
+    },
+    {
       title: "Prestige Fly",
       category: "International Travel & Education Services",
       description:

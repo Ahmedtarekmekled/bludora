@@ -21,6 +21,29 @@ interface Project {
 export default function FeaturedWork() {
   const projects: Project[] = [
     {
+      name: "The Royal Perfumes",
+      subtitle: "Luxury E-commerce Platform",
+      description:
+        "A premium e-commerce platform for luxury perfumes, featuring a sleek design, responsive layout, and seamless shopping experience with Supabase and Next.js.",
+      category: "E-commerce",
+      technologies: [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "Framer Motion",
+      ],
+      link: "https://www.royalperfumes.company/",
+      status: "Live",
+      year: "2026",
+      image: "✨",
+      metrics: [
+        { label: "Modern Design", value: "100%", icon: "🎨" },
+        { label: "Performance", value: "Fast", icon: "⚡" },
+        { label: "Responsive", value: "100%", icon: "📱" },
+      ],
+    },
+    {
       name: "Prestige Fly",
       subtitle: "International Travel & Education Services",
       description:
