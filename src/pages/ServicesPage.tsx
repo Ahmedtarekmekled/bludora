@@ -1,264 +1,129 @@
 import { Link } from "react-router-dom";
-import CircularText from "../components/CircularText";
-import CurvedLoop from "../components/CurvedLoop";
+import { ArrowRight, Plus } from "lucide-react";
 import SEO from "../components/SEO";
+import Reveal from "../components/Reveal";
+import { projects, type ProjectType } from "../data/projects";
+
+const services: { type: ProjectType | null; title: string; body: string; includes: string[] }[] = [
+  {
+    type: "store",
+    title: "E-commerce & online stores",
+    body: "Stores that make products look their best and make ordering effortless, from boutique catalogues to wholesale pricing.",
+    includes: ["Product catalogue & collections", "Cart, checkout or WhatsApp ordering", "Volume / wholesale pricing", "Admin to manage products"],
+  },
+  {
+    type: "booking",
+    title: "Clinics & booking sites",
+    body: "For doctors, clinics, salons and consultants: show your results, explain your services and fill your calendar.",
+    includes: ["Appointment forms", "Before/after galleries", "WhatsApp contact", "Arabic RTL layouts"],
+  },
+  {
+    type: "marketplace",
+    title: "Marketplaces & platforms",
+    body: "Multi-user products with accounts, dashboards and data: the kind of build that runs a business, not just presents it.",
+    includes: ["Customer & seller accounts", "Dashboards and charts", "Maps & locations", "Supabase / Postgres backend"],
+  },
+  {
+    type: "company",
+    title: "Company & service websites",
+    body: "A site that explains what you do in seconds and turns visitors into enquiries, with motion that feels premium.",
+    includes: ["Service & landing pages", "Lead and consultation forms", "Multiple languages", "SEO foundations"],
+  },
+  {
+    type: "automation",
+    title: "Automation & bots",
+    body: "Telegram and WhatsApp bots and workflows that do the repetitive work: collecting, cleaning, pricing and posting, with you approving what goes out.",
+    includes: ["Telegram channel automation", "Auto-formatted product posts", "Review & approval dashboard", "Runs 24/7 on a server"],
+  },
+  {
+    type: null,
+    title: "Redesigns",
+    body: "Already have a site that isn't working for you? We rebuild it faster, cleaner and easier to update.",
+    includes: ["Design audit", "Content restructure", "Speed & SEO fixes", "Smooth migration"],
+  },
+];
+
+const faqs = [
+  ["How long does a project take?", "Most company and clinic sites take 2–4 weeks. Stores and platforms usually take 4–10 weeks depending on features. You'll get a timeline before we start."],
+  ["Do you build in Arabic?", "Yes. We build fully right-to-left Arabic sites, and bilingual Arabic/English or Turkish/English sites too."],
+  ["Can I update the content myself?", "Yes. Every system we build comes with its own admin dashboard, so you can manage products, prices, orders and content without us."],
+  ["What about hosting and domains?", "We handle deployment and connect your domain. Hosting is set up in your name so you always own your site."],
+  ["How much does it cost?", "It depends on scope. Use the project planner or send us a message and we'll reply with a clear quote, with no obligation."],
+];
 
 export default function ServicesPage() {
-  const services = [
-    {
-      title: "Web Development",
-      description:
-        "Custom web applications built with cutting-edge technologies and modern frameworks.",
-      features: [
-        "React & Next.js",
-        "TypeScript",
-        "Progressive Web Apps",
-        "Performance Optimization",
-      ],
-      icon: "🌐",
-    },
-    {
-      title: "Mobile Development",
-      description:
-        "Native and cross-platform mobile apps that deliver exceptional user experiences.",
-      features: [
-        "React Native",
-        "Flutter",
-        "iOS & Android",
-        "App Store Optimization",
-      ],
-      icon: "📱",
-    },
-    {
-      title: "UI/UX Design",
-      description:
-        "Beautiful, intuitive designs that users love and businesses rely on.",
-      features: [
-        "User Research",
-        "Prototyping",
-        "Design Systems",
-        "Accessibility",
-      ],
-      icon: "🎨",
-    },
-    {
-      title: "Backend Development",
-      description:
-        "Scalable server architectures and APIs that power your applications.",
-      features: [
-        "Node.js & Python",
-        "Database Design",
-        "API Development",
-        "Cloud Infrastructure",
-      ],
-      icon: "⚙️",
-    },
-    {
-      title: "AI & Machine Learning",
-      description:
-        "Intelligent solutions that learn, adapt, and provide valuable insights.",
-      features: [
-        "Data Analysis",
-        "Predictive Models",
-        "Natural Language Processing",
-        "Computer Vision",
-      ],
-      icon: "🤖",
-    },
-    {
-      title: "DevOps & Cloud",
-      description:
-        "Reliable deployment and infrastructure management for seamless operations.",
-      features: [
-        "CI/CD Pipelines",
-        "Docker & Kubernetes",
-        "AWS/Azure/GCP",
-        "Monitoring & Analytics",
-      ],
-      icon: "☁️",
-    },
-  ];
-
   return (
-    <main className="pt-32">
+    <>
       <SEO
-        title="Our Services - Web Development, Mobile Apps & More"
-        description="From concept to deployment, we deliver end-to-end digital solutions including web development, mobile apps, UI/UX design, backend development, AI/ML, and DevOps."
+        title="Services — Bludora"
+        description="E-commerce stores, clinic and booking sites, marketplaces, company websites and Telegram automations, designed and built by Bludora in Arabic, English and Turkish."
         url="https://bludora.vercel.app/services"
-        image="/logo1.png"
-        keywords={[
-          "web development",
-          "mobile development",
-          "ui ux design",
-          "backend development",
-          "ai machine learning",
-          "devops",
-          "software services",
-        ]}
       />
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-surface to-background-light relative overflow-hidden">
-        <div className="container mx-auto px-container text-center">
-          <h1 className="text-6xl lg:text-8xl font-display font-bold text-white mb-8 leading-tight">
-            Our
-            <span className="text-accent-400 block">Services</span>
+
+      <section className="wrap pb-16 pt-32 sm:pt-44">
+        <Reveal>
+          <p className="eyebrow mb-6">Services</p>
+          <h1 className="max-w-5xl font-display text-mega">
+            One studio, <span className="italic text-paper/60">from first sketch to launch.</span>
           </h1>
-          <p className="text-2xl lg:text-3xl text-text-secondary font-light max-w-4xl mx-auto leading-relaxed">
-            From concept to deployment, we deliver end-to-end digital solutions
-            that drive results.
-          </p>
-        </div>
+        </Reveal>
       </section>
 
-      {/* Curved Loop */}
-      <section className="relative overflow-hidden bg-surface-dark">
-        <CurvedLoop
-          marqueeText="✦ DESIGN ✦ DEVELOP ✦ DEPLOY ✦ DELIVER ✦"
-          speed={2.5}
-          curveAmount={100}
-          direction="right"
-          interactive={true}
-          className="font-display font-bold text-accent-400"
-        />
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-32 bg-gradient-to-br from-background to-surface">
-        <div className="container mx-auto px-container">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-display font-bold text-white mb-6">
-              What We Do
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              We combine technical expertise with creative vision to build
-              digital experiences that matter.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-surface-dark p-8 rounded-2xl border border-border hover:border-accent-400/50 transition-all duration-300 group hover:transform hover:scale-105"
-              >
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+      <section className="wrap pb-24">
+        <ul className="border-t border-line">
+          {services.map((s, i) => {
+            const example = s.type ? projects.find((p) => p.type === s.type) : null;
+            return (
+              <Reveal as="li" key={s.title} className="grid gap-6 border-b border-line py-12 lg:grid-cols-12">
+                <span className="font-mono text-xs text-muted lg:col-span-1">0{i + 1}</span>
+                <div className="lg:col-span-5">
+                  <h2 className="font-display text-4xl sm:text-5xl">{s.title}</h2>
+                  <p className="mt-4 max-w-md text-paper/70">{s.body}</p>
                 </div>
-                <h3 className="text-2xl font-display font-bold text-white mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-text-secondary mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li
-                      key={featureIndex}
-                      className="flex items-center text-text-muted"
-                    >
-                      <span className="w-2 h-2 bg-accent-400 rounded-full mr-3"></span>
-                      {feature}
+                <ul className="space-y-2 text-paper/85 lg:col-span-3">
+                  {s.includes.map((x) => (
+                    <li key={x} className="flex items-center gap-3">
+                      <span className="h-1 w-1 rounded-full bg-accent" />
+                      {x}
                     </li>
                   ))}
                 </ul>
-              </div>
+                <div className="flex flex-col items-start gap-4 lg:col-span-3 lg:items-end">
+                  {example && (
+                    <Link to={`/work/${example.slug}`} className="group flex items-center gap-3">
+                      <img src={example.thumb} alt="" loading="lazy" className="h-14 w-24 rounded-md object-cover object-top" />
+                      <span className="text-sm text-muted group-hover:text-paper">See {example.name}</span>
+                    </Link>
+                  )}
+                  <Link to={s.type ? `/start?type=${s.type}` : "/start"} className="link-line flex items-center gap-2 text-sm">
+                    Start this <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </Reveal>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section className="border-t border-line bg-panel/60">
+        <div className="wrap grid gap-12 py-24 sm:py-32 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4">
+            <p className="eyebrow mb-5">Questions</p>
+            <h2 className="font-display text-big">Good to know</h2>
+          </Reveal>
+          <div className="divide-y divide-line border-y border-line lg:col-span-8">
+            {faqs.map(([q, a]) => (
+              <details key={q} className="group py-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg [&::-webkit-details-marker]:hidden">
+                  {q}
+                  <Plus size={20} className="shrink-0 text-muted transition-transform duration-300 group-open:rotate-45" />
+                </summary>
+                <p className="mt-4 max-w-2xl text-paper/70">{a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Process Section */}
-      <section className="py-32 bg-surface relative overflow-hidden">
-        <div className="container mx-auto px-container">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <h2 className="text-5xl font-display font-bold text-white mb-8">
-                Our Process
-              </h2>
-              <div className="space-y-8">
-                {[
-                  {
-                    step: "01",
-                    title: "Discovery",
-                    description:
-                      "We dive deep into your vision, goals, and challenges to understand what success looks like.",
-                  },
-                  {
-                    step: "02",
-                    title: "Strategy",
-                    description:
-                      "We craft a comprehensive plan that aligns technology choices with your business objectives.",
-                  },
-                  {
-                    step: "03",
-                    title: "Design & Build",
-                    description:
-                      "Our team brings your vision to life with beautiful designs and robust, scalable code.",
-                  },
-                  {
-                    step: "04",
-                    title: "Launch & Support",
-                    description:
-                      "We ensure a smooth launch and provide ongoing support to keep your solution thriving.",
-                  },
-                ].map((phase, index) => (
-                  <div key={index} className="flex items-start space-x-6">
-                    <div className="flex-shrink-0 w-16 h-16 bg-accent-400 rounded-full flex items-center justify-center">
-                      <span className="text-white font-display font-bold text-lg">
-                        {phase.step}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-display font-bold text-white mb-2">
-                        {phase.title}
-                      </h3>
-                      <p className="text-text-secondary leading-relaxed">
-                        {phase.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <CircularText
-                text="✦ DISCOVER ✦ STRATEGY ✦ BUILD ✦ LAUNCH ✦"
-                onHover="slowDown"
-                spinDuration={25}
-                className="w-96 h-96 text-accent-400 font-display text-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-background to-surface-dark">
-        <div className="container mx-auto px-container text-center">
-          <h2 className="text-5xl lg:text-6xl font-display font-bold text-white mb-8">
-            Ready to Start?
-          </h2>
-          <p className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
-            Let's discuss your project and explore how we can bring your digital
-            vision to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link
-              to="/contact"
-              className="px-8 py-4 bg-accent-400 text-white font-display font-bold rounded-full hover:bg-accent-500 transition-colors duration-300 transform hover:scale-105 inline-block"
-            >
-              Start a Project
-            </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-4 border-2 border-accent-400 text-accent-400 font-display font-bold rounded-full hover:bg-accent-400 hover:text-white transition-all duration-300 inline-block"
-            >
-              Schedule a Call
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+    </>
   );
 }

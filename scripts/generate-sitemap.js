@@ -8,42 +8,15 @@ const __dirname = path.dirname(__filename);
 // Website configuration
 const siteUrl = "https://bludora.vercel.app";
 const pages = [
-  {
-    url: "/",
-    priority: "1.0",
-    changefreq: "daily",
-    lastmod: new Date().toISOString(),
-  },
-  {
-    url: "/about",
-    priority: "0.9",
-    changefreq: "monthly",
-    lastmod: new Date().toISOString(),
-  },
-  {
-    url: "/services",
-    priority: "0.9",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString(),
-  },
-  {
-    url: "/work",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString(),
-  },
-  {
-    url: "/selected-work",
-    priority: "0.8",
-    changefreq: "weekly",
-    lastmod: new Date().toISOString(),
-  },
-  {
-    url: "/contact",
-    priority: "0.8",
-    changefreq: "monthly",
-    lastmod: new Date().toISOString(),
-  },
+  { url: "/", priority: "1.0", changefreq: "weekly", lastmod: new Date().toISOString() },
+  { url: "/work", priority: "0.9", changefreq: "weekly", lastmod: new Date().toISOString() },
+  { url: "/start", priority: "0.9", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/services", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/about", priority: "0.7", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/contact", priority: "0.7", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/work/royal-perfumes", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/work/cangday", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/work/muhtesem-telegram", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
 ];
 
 // Generate XML sitemap
