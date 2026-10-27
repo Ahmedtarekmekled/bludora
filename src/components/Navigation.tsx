@@ -1,228 +1,111 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { site, whatsappLink } from "../data/site";
+
+const links = [
+  { to: "/work", label: "Work" },
+  { to: "/services", label: "Services" },
+  { to: "/about", label: "Studio" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navigationItems = [
-    { text: "Selected Work", link: "/work" },
-    { text: "About", link: "/about" },
-    { text: "Services", link: "/services" },
-    { text: "Let's chat", link: "/contact" },
-  ];
-
-  const socialLinks = [
-    {
-      label: "IG",
-      platform: "Instagram",
-      url: "https://www.instagram.com/bludorasoftware/",
-    },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
 
   return (
-    <>
-      <nav
-        className={`navigation fixed top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 lg:top-8 lg:left-8 lg:right-8 z-50 transition-all duration-300 rounded-2xl border ${
-          isScrolled
-            ? "bg-background/95 backdrop-blur-md border-border shadow-2xl shadow-background/50"
-            : "bg-transparent border-transparent"
-        }`}
-      >
-        <div className="flex items-center justify-between p-3 sm:p-4">
-          {/* Left Side - Logo and Brand */}
-          <div className="flex items-center space-x-3 sm:space-x-6">
-            <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
-              <img
-                src="/logo1.png"
-                alt="Bludora Logo"
-                className="w-8 h-8 sm:w-10 sm:h-10 hover:scale-110 transition-transform duration-300"
-              />
-              <span className="font-display font-bold text-lg sm:text-xl text-white hidden sm:block">
-                Bludora
-              </span>
-            </Link>
-          </div>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        scrolled || open ? "border-b border-line bg-ink/80 backdrop-blur-xl" : "border-b border-transparent"
+      }`}
+    >
+      <nav className="wrap flex h-16 items-center justify-between sm:h-20" aria-label="Main">
+        <Link to="/" className="flex items-center gap-2.5" aria-label="Bludora home">
+          <img src="/logo1.png" alt="" width={32} height={32} className="h-8 w-8" />
+          <span className="font-display text-2xl leading-none">Bludora</span>
+        </Link>
 
-          {/* Center Navigation - Desktop */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item, index) => {
-              const isActive = location.pathname === item.link;
+        <ul className="hidden items-center gap-9 md:flex">
+          {links.map((l) => (
+            <li key={l.to}>
+              <NavLink to={l.to} className="link-line pb-0.5 text-sm text-paper/80 transition-colors hover:text-paper">
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
 
-              return (
-                <Link
-                  key={index}
-                  to={item.link}
-                  className={`nav-item text-sm tracking-wide transition-colors duration-200 relative ${
-                    isActive ? "text-accent-400" : ""
-                  }`}
-                >
-                  {item.text}
-                </Link>
-              );
-            })}
-          </div>
-
-          {/* Right Side - Social Links and Menu */}
-          <div className="flex items-center space-x-4 sm:space-x-6">
-            {/* Social Links - Desktop */}
-            <div className="hidden xl:flex items-center space-x-1">
-              <span className="text-text-secondary text-xs mr-3">(Social)</span>
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-text-secondary hover:text-accent-400 transition-colors duration-200 text-xs px-2"
-                  aria-label={social.platform}
-                >
-                  {social.label}
-                </a>
-              ))}
-            </div>
-
-            {/* Mobile Menu Toggle */}
-            <motion.button
-              className="lg:hidden flex items-center space-x-2 text-text-primary hover:text-accent-400 transition-colors duration-200 bg-surface/20 backdrop-blur-sm rounded-full px-3 py-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.1 }}
-            >
-              <motion.div
-                animate={{ rotate: isMenuOpen ? 90 : 0 }}
-                transition={{ duration: 0.2, ease: "easeInOut" }}
-              >
-                {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
-              </motion.div>
-              <span className="text-sm font-display">
-                {isMenuOpen ? "Close" : "Menu"}
-              </span>
-            </motion.button>
-          </div>
+        <div className="flex items-center gap-3">
+          <Link to="/start" className="btn-primary hidden !py-2.5 sm:inline-flex">
+            Start a project
+            <ArrowUpRight size={16} />
+          </Link>
+          <button
+            type="button"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full border border-line md:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span
+              className={`absolute h-px w-4 bg-paper transition-transform duration-300 ${open ? "rotate-45" : "-translate-y-1"}`}
+            />
+            <span
+              className={`absolute h-px w-4 bg-paper transition-transform duration-300 ${open ? "-rotate-45" : "translate-y-1"}`}
+            />
+          </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {open && (
           <motion.div
-            className="fixed inset-0 bg-background/98 backdrop-blur-md z-40 lg:hidden"
+            className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-ink md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.25 }}
           >
-            <motion.div
-              className="flex flex-col items-center justify-center h-full space-y-8 px-6"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
-            >
-              {/* Close button */}
-              <motion.button
-                className="absolute top-6 right-6 p-3 rounded-full bg-surface/20 backdrop-blur-sm hover:bg-surface/40 transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-                initial={{ scale: 0, rotate: -90 }}
-                animate={{ scale: 1, rotate: 0 }}
-                exit={{ scale: 0, rotate: 90 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <X size={24} className="text-white" />
-              </motion.button>
-
-              {/* Menu Items */}
-              <div className="flex flex-col items-center space-y-8">
-                {navigationItems.map((item, index) => {
-                  const isActive = location.pathname === item.link;
-
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{
-                        duration: 0.3,
-                        delay: 0.1 + index * 0.1,
-                        ease: "easeOut",
-                      }}
-                    >
-                      <Link
-                        to={item.link}
-                        className={`text-2xl sm:text-3xl font-display font-light transition-all duration-300 hover:scale-110 transform ${
-                          isActive
-                            ? "text-accent-400"
-                            : "text-text-primary hover:text-accent-400"
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.text}
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </div>
-
-              {/* Mobile Social Links */}
-              <motion.div
-                className="flex items-center space-x-8 mt-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
-              >
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-accent-400 transition-colors duration-200 text-lg"
-                    aria-label={social.platform}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {social.label}
-                  </motion.a>
-                ))}
-              </motion.div>
-
-              {/* Mobile CTA */}
-              <motion.div
-                className="mt-8"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3, delay: 0.6 }}
-              >
-                <Link
-                  to="/contact"
-                  className="px-8 py-3 bg-accent-400 text-white font-display font-bold rounded-full hover:bg-accent-500 transition-all duration-300 inline-block transform hover:scale-105"
-                  onClick={() => setIsMenuOpen(false)}
+            <ul className="wrap flex flex-col pt-6">
+              {[{ to: "/", label: "Home" }, ...links, { to: "/start", label: "Start a project" }].map((l, i) => (
+                <motion.li
+                  key={l.to}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.04 * i, duration: 0.4 }}
+                  className="border-b border-line"
                 >
-                  Start a Project
-                </Link>
-              </motion.div>
-            </motion.div>
+                  <NavLink to={l.to} end className="block py-4 font-display text-4xl">
+                    {l.label}
+                  </NavLink>
+                </motion.li>
+              ))}
+            </ul>
+            <div className="wrap mt-10 flex flex-col gap-2 pb-10 text-sm text-muted">
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={whatsappLink("Hi Bludora, I'd like to talk about a project.")} target="_blank" rel="noreferrer">
+                WhatsApp {site.phone}
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 }
