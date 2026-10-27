@@ -36,7 +36,7 @@ export default function AboutPage() {
               account managers and no hand-offs, so the people you talk to are the people building your site.
             </p>
             <p className="mt-6 text-lg text-paper/70">
-              We've built online stores for fragrance brands, a Telegram automation for a clothing brand, and
+              We've built online stores for fragrance brands and a rug house, a Telegram automation for a clothing brand, and
               sites for marketplaces, clinics and travel agencies. Different industries, same goal: bring in business.
             </p>
           </Reveal>

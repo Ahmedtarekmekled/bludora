@@ -36,7 +36,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Bludora — Websites, stores & platforms that sell"
-        description="Bludora is a design and development studio. See work for Royal Perfumes, Cangday and Mühteşem, then plan your own project in two minutes."
+        description="Bludora is a design and development studio. See work for Royal Perfumes, Cangday, Sempati Halı and Mühteşem, then plan your own project in two minutes."
         url="https://bludora.vercel.app"
       />
 
@@ -110,7 +110,7 @@ export default function HomePage() {
       </div>
 
       <div className="mt-14 sm:mt-28">
-        <Marquee items={["Royal Perfumes", "Online stores", "Cangday", "Dashboards", "Mühteşem", "Telegram bots"]} />
+        <Marquee items={["Royal Perfumes", "Online stores", "Cangday", "Dashboards", "Sempati Halı", "Telegram bots", "Mühteşem"]} />
       </div>
 
       {/* Index with hover previews */}

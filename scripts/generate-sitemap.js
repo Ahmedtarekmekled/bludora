@@ -16,6 +16,7 @@ const pages = [
   { url: "/contact", priority: "0.7", changefreq: "monthly", lastmod: new Date().toISOString() },
   { url: "/work/royal-perfumes", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
   { url: "/work/cangday", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
+  { url: "/work/sempati-hali", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
   { url: "/work/muhtesem-telegram", priority: "0.8", changefreq: "monthly", lastmod: new Date().toISOString() },
 ];
 

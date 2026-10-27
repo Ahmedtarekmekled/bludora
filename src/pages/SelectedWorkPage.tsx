@@ -20,7 +20,7 @@ export default function WorkPage() {
     <>
       <SEO
         title="Work — Bludora"
-        description="Websites, stores, platforms and automations by Bludora: Royal Perfumes, Cangday and Mühteşem."
+        description="Websites, stores, platforms and automations by Bludora: Royal Perfumes, Cangday, Sempati Halı and Mühteşem."
         url="https://bludora.vercel.app/work"
       />
 
