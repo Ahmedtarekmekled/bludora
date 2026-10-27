@@ -101,6 +101,36 @@ const allProjects: Project[] = [
     tint: "#2a1416",
   },
   {
+    slug: "sempati-hali",
+    name: "Sempati Halı",
+    client: "Sempati Halı, Istanbul",
+    sector: "Rug e-commerce",
+    type: "store",
+    year: "2026",
+    visual: "site",
+    url: "https://www.sempatihali.com/",
+    image: "/work/sempati.webp",
+    thumb: "/work/sempati-sm.webp",
+    tagline: "Rare, hand-knotted rugs from Anatolia, sold to the world.",
+    summary:
+      "A full e-commerce system for an Istanbul rug house selling vintage, handmade, kilim and patchwork rugs worldwide, in English and Turkish.",
+    challenge:
+      "One-of-a-kind rugs are hard to buy online: every piece is unique, sizes and colours matter, and international buyers need to trust provenance and shipping before paying for something they can't touch.",
+    approach:
+      "A calm, gallery-like storefront that lets the rugs lead, with shopping by size and colour, curated special pieces, certificates of authenticity and insured worldwide shipping up front, plus a Try at Home service and a dedicated channel for business buyers.",
+    built: [
+      "English and Turkish storefront with a language switch",
+      "Catalogue by category, size and colour, with curated special pieces",
+      "Customer accounts, wishlist, cart and search",
+      "Try at Home service and a For Business wholesale section",
+      "Journal, reviews, FAQ and provenance pages",
+    ],
+    stack: ["Next.js", "Vercel"],
+    languages: ["English", "Turkish"],
+    features: ["catalog", "payments", "bilingual", "seo", "dashboard"],
+    tint: "#13283a",
+  },
+  {
     slug: "shopydash",
     name: "ShopyDash",
     client: "ShopyDash",
